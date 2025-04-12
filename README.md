@@ -48,15 +48,15 @@ After running the full pipeline, a file named submission.csv will be generated c
 
 ## Project Structure 📦
 
-├── README.md
-├── requirements.txt
-├── EquationSolving-OCR.ipynb         # Original notebook (Colab)
-├── equationsolving_ocr.py            # Exported script version of the notebook
-├── drive/
-│   ├── train/                         # Training images
-│   ├── test/                          # Test images
-│   ├── train_info.csv                 # Labels for training
-│   └── submission.csv                 # Generated predictions
+    ├── README.md
+    ├── requirements.txt
+    ├── EquationSolving-OCR.ipynb         # Original notebook (Colab)
+    ├── equationsolving_ocr.py            # Exported script version of the notebook
+    ├── drive/
+    │   ├── train/                         # Training images
+    │   ├── test/                          # Test images
+    │   ├── train_info.csv                 # Labels for training
+    │   └── submission.csv                 # Generated predictions
 
 ## License 🧾
 This project is licensed under the MIT License. See the LICENSE file for details.
