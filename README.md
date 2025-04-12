@@ -1,55 +1,62 @@
 # Equation Solver with OCR
-This repository implements a complete pipeline for classifying and solving equations using OCR from image data. The system detects whether an equation is handwritten or typed, segments and classifies individual characters, reconstructs the expression, and evaluates the result.
 
-## Overview
-The pipeline processes images containing mathematical equations, determines their type, recognizes characters using CNNs and OCR (Tesseract + EasyOCR), reconstructs expressions, and computes their numeric value.
+This repository implements a full pipeline to classify and solve equations from images using deep learning and OCR techniques. It supports both **handwritten** and **typed** expressions and reconstructs them into solvable strings.
 
-## Typed/Handwritten Classification using ResNet18
+## Overview 🚀
 
-Character Recognition via two methods:
+The system processes input equation images by:
 
- - CNN trained on MNIST + custom symbol dataset
+- Classifying the equation as handwritten or typed
+- Segmenting and recognizing characters using:
+  - CNN trained on MNIST and a custom symbol dataset
+  - Tesseract and EasyOCR for OCR-based recognition
+- Reconstructing the equation
+- Solving the expression and saving results
 
- - Tesseract/EasyOCR for robust character detection
+## Dataset 📁
 
- - Expression Evaluation using standard parsing and heuristics
+All training and test data are available in this shared Google Drive folder:
 
- - Output as CSV submission with predicted type and solved value
+[Equation Dataset - Google Drive](https://drive.google.com/drive/folders/13nICjIQg57NhPn5eYJwZp1jCpJwk4vjp)
 
-Dataset
-The dataset used in this project (train/test images and labels) is available publicly on Google Drive:
+## How to Use 🛠
 
-📂 Access Dataset Here
+### 1. Clone the Repository
 
-How to Use 📋
-Clone the Repository:
+    git clone https://github.com/yourusername/equation-ocr-solver.git
+    cd equation-ocr-solver
+    
+### 2. Install Dependencies
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/equation-ocr-solver.git
-Install Dependencies: Required packages include torch, torchvision, pytesseract, opencv-python, easyocr, Pillow, and others.
+    pip install -r requirements.txt
+    
+If you're running in Google Colab, also install Tesseract with:
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run on Google Colab: Open and execute the original notebook: EquationSolving-OCR.ipynb
+    !apt-get install tesseract-ocr
+    
+### 3. Run the Notebook
+Open and run the following notebook in Google Colab:
 
-Output: A submission.csv file will be generated with classification (typed/handwritten) and evaluated result.
+    EquationSolving-OCR.ipynb
 
-Project Structure
-bash
-Copy
-Edit
+### 4. Output
+After running the full pipeline, a file named submission.csv will be generated containing:
+
+  - The predicted type of each equation image (typed or handwritten)
+
+  - The evaluated result of the expression
+
+## Project Structure 📦
+
 ├── README.md
 ├── requirements.txt
-├── EquationSolving-OCR.ipynb      # Original Colab notebook
-├── equationsolving_ocr.py         # Exported .py version of the notebook
-├── drive/                         # Google Drive folder (public dataset)
-│   ├── train/                     # Training images
-│   ├── test/                      # Test images
-│   ├── train_info.csv             # Labels for training set
-│   └── submission.csv             # Output predictions
-License 🛡️
-This project is licensed under the MIT License. See the LICENSE file for more details.
+├── EquationSolving-OCR.ipynb         # Original notebook (Colab)
+├── equationsolving_ocr.py            # Exported script version of the notebook
+├── drive/
+│   ├── train/                         # Training images
+│   ├── test/                          # Test images
+│   ├── train_info.csv                 # Labels for training
+│   └── submission.csv                 # Generated predictions
+
+## License 🧾
+This project is licensed under the MIT License. See the LICENSE file for details.
