@@ -8,8 +8,8 @@ The system processes input equation images by:
 
 - Classifying the equation as handwritten or typed
 - Segmenting and recognizing characters using:
-  - CNN trained on MNIST and a custom symbol dataset
-  - Tesseract and EasyOCR for OCR-based recognition
+     CNN trained on MNIST and a custom symbol dataset
+     Tesseract and EasyOCR for OCR-based recognition
 - Reconstructing the equation
 - Solving the expression and saving results
 
